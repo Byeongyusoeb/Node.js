@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html dir="ltr" i18n-processed=""><head>
+    <meta charset="UTF-8">
+    <title i18n-content="NTP_TITLE">새 탭</title>
+    <link rel="shortcut icon" href="chrome://resources/whale/img/favicon.png">
+    <link rel="stylesheet" href="chrome://resources/whale/css/common.css">
+    <link rel="stylesheet" href="css/ntp.css">
+    <script src="chrome://resources/js/assert.js"></script>
+    <script defer="" src="chrome://resources/js/load_time_data.js"></script>
+    <script defer="" src="js/dist/ntp.common.min.js"></script>
+    <script defer="" src="js/dist/ntp.head.min.js"></script>
+  <style id="__wl_967027723377__"></style></head>
+  <body>
+  <div id="view-port" class="clock-mode">
+    <div id="main-view" data-widget="undefined" class="digital-mode">
+      <div id="rotatable-view">
+        <div class="calendar-area">
+          <ntp-date>2018.12.16.</ntp-date>
+        </div>
+        <div class="clock-area">
+          <div class="clock-container"><ntp-digital-clock detailed=""><span class="time-number">07</span><span class="time-number">26</span><span class="time-number">55</span><span class="time-period">PM</span></ntp-digital-clock></div>
+        </div>
+        <div class="search-area">
+          <ntp-search>
+      <div class="naver-search">
+      <form action="https://search.naver.com/search.naver" class="search-form">
+          <div class="naver-search-form">
+              <a href="https://www.naver.com" class="naver-logo" data-logging-type="NTP.naver"></a>
+              <input id="inputSearch" type="text" name="query" class="naver-search-input input-text" placeholder="검색" accesskey="s" maxlength="255" autocomplete="off" autofocus="true">
+              <input type="hidden" name="ie" value="utf8">
+              <input type="hidden" name="sm" value="whl_nht">
+              <button type="submit" class="naver-search-btn"></button>
+          <div class="autocomplete-suggestions " style="display: none;"></div></div>
+      </form>
+      </div></ntp-search>
+        </div>
+        <div class="topsite-area topsite-container select-none"></div>
+        <div class="widget-area"></div>
+      </div>
+      <div class="page-index-container select-none">
+        <span class="page-index" data-key="topsite" data-logging-type="NTP.mode">
+          <i class="icon-page-index"></i>
+        </span>
+        <span class="page-index active" data-key="digital" data-logging-type="NTP.mode">
+          <i class="icon-page-index"></i>
+        </span>
+        <span class="page-index" data-key="analog" data-logging-type="NTP.mode">
+          <i class="icon-page-index"></i>
+        </span>
+      </div>
+    </div>
+  
+    <div id="report-container">
+      <a id="report-suggestion" class="btn-report" href="http://lab.whale.naver.com/" i18n-values=".title:NTP_FEEDBACK_LINK_TEXT" title="사용 의견">
+      </a>
+    </div>
+  
+    <div id="setting" class="widget-container">
+      <button class="col btn-widget-more setting-trigger" data-logging-type="NTP.setting"></button>
+  
+      <div id="setting-position-pointer" class="popup-positino-pointer">
+        <div id="popup-setting" class="modal">
+          <div class="modal-header">
+            <a href="#setting-background" class="modal-title active" i18n-content="NTP_SETTINGS_THEME">배경테마</a>
+            <a href="#setting-widget" class="modal-title" i18n-content="NTP_SETTINGS_WIDGET">화면모드</a>
+          </div>
+  
+          <section id="setting-background" class="setting-content">
+            <div class="setting-section top">
+              <div class="section-title background-section-title">
+                <a class="bg-title" data-type="theme" target="_blank" rel="noopener"><span class="text-title"></span></a>
+  
+                <div class="bg-title" data-type="ncloud" data-signed-in="true" hidden="">
+                  <span class="text-title" i18n-values="data-placeholder:NTP_SETTINGS_THEME_NCLOUD_HELP" data-placeholder="선택한 폴더의 사진이 노출됩니다."></span>
+                  <button class="btn-explorer" i18n-content="NTP_SETTINGS_THEME_NCLOUD_SELECT">폴더선택</button>
+                </div>
+  
+                <div class="bg-title" data-type="ncloud" data-signed-in="false" hidden="">
+                  <button class="btn-signin">
+                    <span class="more-text" i18n-content="NTP_SETTINGS_THEME_NCLOUD_LOGIN">네이버 아이디 로그인</span>
+                  </button>
+                  <button class="btn-explorer disabled" i18n-content="NTP_SETTINGS_THEME_NCLOUD_SELECT">폴더선택</button>
+                </div>
+  
+                <div class="bg-title" data-type="local" hidden="">
+                  <span class="text-title" i18n-values="data-placeholder:NTP_SETTINGS_THEME_LOCAL_HELP" data-placeholder="파일찾기를 눌러 사진을 선택해주세요."></span>
+                  <button class="btn-explorer" i18n-content="NTP_SETTINGS_THEME_LOCAL_SELECT">파일찾기</button>
+                </div>
+              </div>
+              <div class="section-body bg-container"></div>
+            </div>
+            <div id="period-option" class="setting-section bottom flex-align-justify">
+              <span class="section-title" i18n-content="NTP_SETTINGS_THEME_PERIOD">사진 변경 주기</span>
+              <select class="setting-select" name="period-image">
+                <option value="hour" i18n-content="NTP_SETTINGS_THEME_PERIOD_HOUR">한 시간</option>
+                <option value="day" i18n-content="NTP_SETTINGS_THEME_PERIOD_DAY">하루</option>
+                <option value="tab" i18n-content="NTP_SETTINGS_THEME_PERIOD_TAB">열 때 마다</option>
+                <option value="infinite" i18n-content="NTP_SETTINGS_THEME_PERIOD_INFINITE">고정</option>
+              </select>
+            </div>
+          </section>
+  
+          <section id="setting-widget" class="setting-content" hidden="">
+            <div class="setting-section top">
+              <div class="section-block flex-align-justify main-widgets">
+                <span class="section-title" i18n-content="NTP_SETTINGS_WIDGET_MAIN_TITLE">메인 위젯</span>
+                <select class="setting-select" name="main-widget">
+                  <option value="topsite" i18n-content="NTP_SETTINGS_WIDGET_TOPSITE">자주 가는 사이트</option>
+                  <option value="digital" i18n-content="NTP_SETTINGS_WIDGET_CLOCK_DIGITAL">디지털 시계</option>
+                  <option value="analog" i18n-content="NTP_SETTINGS_WIDGET_CLOCK_ANALOG">아날로그 시계</option>
+                  <option value="empty" i18n-content="NTP_SETTINGS_WIDGET_EMPTY">없음</option>
+                </select>
+              </div>
+              <div class="section-block footer-widgets">
+                <div class="section-title" i18n-content="NTP_SETTINGS_WIDGET_MINI_TITLE">미니 위젯</div>
+                <div class="footer-widget-options min-scroll">
+                  <label class="footer-widget-option weather">
+                    <span i18n-content="NTP_SETTINGS_WIDGET_WEATHER">날씨</span>
+                    <input type="checkbox" name="footer-widget" value="weather" data-target="#weather" checked="">
+                  </label>
+                  <label class="footer-widget-option clock">
+                    <span i18n-content="NTP_SETTINGS_WIDGET_CLOCK">시계</span>
+                    <input type="checkbox" name="footer-widget" value="clock" data-target="#clock" checked="">
+                  </label>
+                  <label class="footer-widget-option todo">
+                      <span i18n-content="NTP_SETTINGS_WIDGET_TODO">할 일</span>
+                      <input type="checkbox" name="footer-widget" value="todo" data-target="#todo" checked="">
+                  </label>
+                  <label class="footer-widget-option topsite">
+                    <span i18n-content="NTP_SETTINGS_WIDGET_TOPSITE">자주 가는 사이트</span>
+                    <input type="checkbox" name="footer-widget" value="topsite" data-target="#topsite" checked="">
+                  </label>
+                  <label class="footer-widget-option rankup">
+                    <span i18n-content="NTP_SETTINGS_WIDGET_RANKUP">급상승 검색어</span>
+                    <input type="checkbox" name="footer-widget" value="rankup" data-target="#rankup" checked="">
+                  </label>
+                  </div>
+              </div>
+            </div>
+            <div class="setting-section bottom flex-align-justify">
+              <span class="section-title" i18n-content="NTP_SETTINGS_WIDGET_DISPLAY">노출 방식</span>
+              <select class="setting-select" name="display-mode">
+                <option value="always" i18n-content="NTP_SETTINGS_WIDGET_DISPLAY_ALWAYS">항상 보이기</option>
+                <option value="hover" i18n-content="NTP_SETTINGS_WIDGET_DISPLAY_HOVER">마우스 이동 시 보이기</option>
+              </select>
+            </div>
+          </section>
+  
+          <!-- // -->
+          <div class="modal-footer-setting">
+            <span class="option-desc" i18n-content="NTP_SETTINGS_USE_SYNC">설정 동기화</span>
+            <label id="chk-sync-setting" class="toggle right-side">
+              <input type="checkbox">
+              <div class="slider round"></div>
+            </label>
+          </div>
+          <!-- // -->
+        </div><!-- popup-setting -->
+      </div>
+    </div>
+  
+    <div id="footer" class="" style="">
+      <div id="weather" class="widget-container"><ntp-weather class="">
+              <a class="weather-info" data-logging-type="NTP.weather" href="http://weather.naver.com/rgn/townWetr.nhn?naverRgnCd=02463113">
+              <ntp-weather-icon data-icon="cloud" data-animatable="true"></ntp-weather-icon>
+              <span class="weather-temperature">0.0</span>
+              <span class="weather-location">마북동</span>
+              <span class="weather-air normal" title="">
+                  보통 38
+              </span>
+          </a>
+              <ntp-region class="weather-geo" data-logging-type="NTP.location"></ntp-region></ntp-weather></div>
+      <div id="todo" class="widget-container" data-modal-trigger="click" data-logging-type="NTP.todoFoot"><ntp-todo-list class="">
+              <div class="btn-widget-more">
+                  <span class="title">
+                      할 일 목록
+                      <b class="todo-num hidden" data-num="0">0</b>
+                  </span>
+              </div>
+              <div class="popup-positino-pointer">
+                  <div class="modal" data-target="#todo">
+                      <div class="popup-header">
+                          할 일 목록
+                          <span class="todo-num-title"></span>
+                      </div>
+                      <div class="empty-list">
+                          항목이 없습니다
+                      </div>
+                      <ul class="list-container list hidden min-scroll"></ul>
+                      <form class="form-container" data-action="insert">
+                          <input type="text" class="input" spellcheck="false" placeholder="할 일을 입력하세요">
+                      </form>
+                  </div>
+              </div></ntp-todo-list></div>
+      <div id="topsite" class="widget-container" data-modal-trigger="hover" data-logging-type="NTP.topsiteFoot"><ntp-topsite-list class="list">
+          <div class="btn-widget-more">
+              <span class="summary-title topsite-title">
+              자주 가는 사이트
+              </span>
+          </div>
+  
+          <div id="topsite-position-pointer" class="popup-positino-pointer">
+              <div id="popup-topsite" class="modal" data-target="#topsite">
+              <div class="popup-header">
+                  자주 가는 사이트
+              </div>
+              <div class="topsite-container list-container summarize">
+              <a class="topsite-item list" href="http://google.co.kr/" data-logging-type="NTP.topsiteFootRecommendlink">
+                  <span style="background-image: url('chrome://favicon/size/16@1x/http://google.co.kr/')" class="topsite-favicon"></span>
+                  <span class="topsite-title prevent-overflow">
+                  Google
+                  </span>
+                  
+                  <input class="btn-delete topsite-btn" type="button" data-key="http://google.co.kr/" data-type="delete" title="고정 해제">
+              </a>
+          
+              <a class="topsite-item list" href="http://www.naver.com/" data-logging-type="NTP.topsiteFootRecommendlink">
+                  <span style="background-image: url('chrome://favicon/size/16@1x/http://www.naver.com/')" class="topsite-favicon"></span>
+                  <span class="topsite-title prevent-overflow">
+                  NAVER
+                  </span>
+                  
+                  <input class="btn-delete topsite-btn" type="button" data-key="http://www.naver.com/" data-type="delete" title="고정 해제">
+              </a>
+          
+              <a class="topsite-item list" href="https://github.com/" data-logging-type="NTP.topsiteFootRecommendlink">
+                  <span style="background-image: url('chrome://favicon/size/16@1x/https://github.com/')" class="topsite-favicon"></span>
+                  <span class="topsite-title prevent-overflow">
+                  GitHub
+                  </span>
+                  
+                  <input class="btn-delete topsite-btn" type="button" data-key="https://github.com/" data-type="delete" title="고정 해제">
+              </a>
+          
+              <a class="topsite-item list" href="https://mail.navercorp.com/#%7B%22fClass%22%3A%22list%22%2C%22oParameter%22%3A%7B%22page%22%3A1%2C%22sortField%22%3A1%2C%22sortType%22%3A0%2C%22folderSN%22%3A%22-1%22%2C%22type%22%3A%22all%22%2C%22isUnread%22%3Afalse%7D%7D" data-logging-type="NTP.topsiteFootRecommendlink">
+                  <span style="background-image: url('chrome://favicon/size/16@1x/https://mail.navercorp.com/#%7B%22fClass%22%3A%22list%22%2C%22oParameter%22%3A%7B%22page%22%3A1%2C%22sortField%22%3A1%2C%22sortType%22%3A0%2C%22folderSN%22%3A%22-1%22%2C%22type%22%3A%22all%22%2C%22isUnread%22%3Afalse%7D%7D')" class="topsite-favicon"></span>
+                  <span class="topsite-title prevent-overflow">
+                  전체메일 : 메일
+                  </span>
+                  
+                  <input class="btn-delete topsite-btn" type="button" data-key="https://mail.navercorp.com/#%7B%22fClass%22%3A%22list%22%2C%22oParameter%22%3A%7B%22page%22%3A1%2C%22sortField%22%3A1%2C%22sortType%22%3A0%2C%22folderSN%22%3A%22-1%22%2C%22type%22%3A%22all%22%2C%22isUnread%22%3Afalse%7D%7D" data-type="delete" title="고정 해제">
+              </a>
+          
+              <a class="topsite-item list" href="http://vms.navercorp.com/Visitor_List" data-logging-type="NTP.topsiteFootRecommendlink">
+                  <span style="background-image: url('chrome://favicon/size/16@1x/http://vms.navercorp.com/Visitor_List')" class="topsite-favicon"></span>
+                  <span class="topsite-title prevent-overflow">
+                  DataCenter Gak
+                  </span>
+                  
+                  <input class="btn-delete topsite-btn" type="button" data-key="http://vms.navercorp.com/Visitor_List" data-type="delete" title="고정 해제">
+              </a>
+          
+              <a class="topsite-item list" href="http://connect.navercorp.com/" data-logging-type="NTP.topsiteFootRecommendlink">
+                  <span style="background-image: url('chrome://favicon/size/16@1x/http://connect.navercorp.com/')" class="topsite-favicon"></span>
+                  <span class="topsite-title prevent-overflow">
+                  Login
+                  </span>
+                  
+                  <input class="btn-delete topsite-btn" type="button" data-key="http://connect.navercorp.com/" data-type="delete" title="고정 해제">
+              </a>
+          
+              <a class="topsite-item list" href="http://ntree.navercorp.com/staff/dashboard.html" data-logging-type="NTP.topsiteFootRecommendlink">
+                  <span style="background-image: url('chrome://favicon/size/16@1x/http://ntree.navercorp.com/staff/dashboard.html')" class="topsite-favicon"></span>
+                  <span class="topsite-title prevent-overflow">
+                  NTree 처리자 화면
+                  </span>
+                  
+                  <input class="btn-delete topsite-btn" type="button" data-key="http://ntree.navercorp.com/staff/dashboard.html" data-type="delete" title="고정 해제">
+              </a>
+          
+              <a class="topsite-item list" href="http://infratech.navercorp.com/mainpage/index.php" data-logging-type="NTP.topsiteFootRecommendlink">
+                  <span style="background-image: url('chrome://favicon/size/16@1x/http://infratech.navercorp.com/mainpage/index.php')" class="topsite-favicon"></span>
+                  <span class="topsite-title prevent-overflow">
+                  NIT Service 인프라기술실
+                  </span>
+                  
+                  <input class="btn-delete topsite-btn" type="button" data-key="http://infratech.navercorp.com/mainpage/index.php" data-type="delete" title="고정 해제">
+              </a>
+          
+              <a class="topsite-item list" href="https://www.youtube.com/watch?v=eHqhyXGdDhs&amp;index=1&amp;list=PLlSZlNj22M7T52ZjN4d_xyibMdEEQG8Ja" data-logging-type="NTP.topsiteFootRecommendlink">
+                  <span style="background-image: url('chrome://favicon/size/16@1x/https://www.youtube.com/watch?v=eHqhyXGdDhs&amp;index=1&amp;list=PLlSZlNj22M7T52ZjN4d_xyibMdEEQG8Ja')" class="topsite-favicon"></span>
+                  <span class="topsite-title prevent-overflow">
+                  Node 001 Introduction - YouTube
+                  </span>
+                  
+                  <input class="btn-delete topsite-btn" type="button" data-key="https://www.youtube.com/watch?v=eHqhyXGdDhs&amp;index=1&amp;list=PLlSZlNj22M7T52ZjN4d_xyibMdEEQG8Ja" data-type="delete" title="고정 해제">
+              </a>
+          
+              <a class="topsite-item list" href="http://ntree.navercorp.com/staff/idc/popup/work-list.html;jsessionid=5CB9216CFC0431E1A43D1FE1C43D8ABE" data-logging-type="NTP.topsiteFootRecommendlink">
+                  <span style="background-image: url('chrome://favicon/size/16@1x/http://ntree.navercorp.com/staff/idc/popup/work-list.html;jsessionid=5CB9216CFC0431E1A43D1FE1C43D8ABE')" class="topsite-favicon"></span>
+                  <span class="topsite-title prevent-overflow">
+                  Login
+                  </span>
+                  
+                  <input class="btn-delete topsite-btn" type="button" data-key="http://ntree.navercorp.com/staff/idc/popup/work-list.html;jsessionid=5CB9216CFC0431E1A43D1FE1C43D8ABE" data-type="delete" title="고정 해제">
+              </a>
+          </div>
+              </div>
+          </div>
+          </ntp-topsite-list></div>
+      <div id="clock" class="widget-container clock-container" data-modal-trigger="hover"><ntp-digital-clock><span class="time-number">07</span><span class="time-number">26</span><span class="time-number"></span><span class="time-period">PM</span></ntp-digital-clock></div>
+      <div id="rankup" class="widget-container" data-modal-trigger="hover"><ntp-rankup class="">
+      <div class="btn-widget-more">
+          <div class="rankup-summary-container summarize">
+          <span class="rankup-item">
+              <span class="rankup-rank no1"></span>
+              <span class="rankup-link prevent-overflow">복면가왕 독수리건</span>
+          </span>
+          <span class="rankup-item">
+              <span class="rankup-rank no2"></span>
+              <span class="rankup-link prevent-overflow">이순재</span>
+          </span>
+          <span class="rankup-item">
+              <span class="rankup-rank no3"></span>
+              <span class="rankup-link prevent-overflow">이현</span>
+          </span>
+          <span class="rankup-item">
+              <span class="rankup-rank no4"></span>
+              <span class="rankup-link prevent-overflow">로운</span>
+          </span>
+          <span class="rankup-item">
+              <span class="rankup-rank no5"></span>
+              <span class="rankup-link prevent-overflow">안다은</span>
+          </span>
+          <span class="rankup-item">
+              <span class="rankup-rank no6"></span>
+              <span class="rankup-link prevent-overflow">로또837회당첨번호</span>
+          </span>
+          <span class="rankup-item">
+              <span class="rankup-rank no7"></span>
+              <span class="rankup-link prevent-overflow">독수리건</span>
+          </span>
+          <span class="rankup-item">
+              <span class="rankup-rank no8"></span>
+              <span class="rankup-link prevent-overflow">거미</span>
+          </span>
+          <span class="rankup-item">
+              <span class="rankup-rank no9"></span>
+              <span class="rankup-link prevent-overflow">차인표</span>
+          </span>
+          <span class="rankup-item">
+              <span class="rankup-rank no10"></span>
+              <span class="rankup-link prevent-overflow">김범수</span>
+          </span>
+          <span class="rankup-item">
+              <span class="rankup-rank no11"></span>
+              <span class="rankup-link prevent-overflow">설현</span>
+          </span>
+          <span class="rankup-item">
+              <span class="rankup-rank no12"></span>
+              <span class="rankup-link prevent-overflow">이서진</span>
+          </span>
+          <span class="rankup-item">
+              <span class="rankup-rank no13"></span>
+              <span class="rankup-link prevent-overflow">디에이드</span>
+          </span>
+          <span class="rankup-item">
+              <span class="rankup-rank no14"></span>
+              <span class="rankup-link prevent-overflow">집사부일체</span>
+          </span>
+          <span class="rankup-item">
+              <span class="rankup-rank no15"></span>
+              <span class="rankup-link prevent-overflow">열린음악회</span>
+          </span>
+          <span class="rankup-item">
+              <span class="rankup-rank no16"></span>
+              <span class="rankup-link prevent-overflow">박정현</span>
+          </span>
+          <span class="rankup-item">
+              <span class="rankup-rank no17"></span>
+              <span class="rankup-link prevent-overflow">어쿠스틱콜라보</span>
+          </span>
+          <span class="rankup-item">
+              <span class="rankup-rank no18"></span>
+              <span class="rankup-link prevent-overflow">주말 사용 설명서</span>
+          </span>
+          <span class="rankup-item">
+              <span class="rankup-rank no19"></span>
+              <span class="rankup-link prevent-overflow">편백구들장</span>
+          </span>
+          <span class="rankup-item">
+              <span class="rankup-rank no20"></span>
+              <span class="rankup-link prevent-overflow">노가리</span>
+          </span>
+          <span class="rankup-item">
+              <span class="rankup-rank no1"></span>
+              <span class="rankup-link prevent-overflow">복면가왕 독수리건</span>
+          </span></div>
+      </div>
+      <div id="rankup-position-pointer" class="popup-positino-pointer">
+          <div id="popup-rankup" class="modal" data-page-index="0" data-target="#rankup">
+              <div class="popup-header">
+                  급상승 검색어
+                  <a class="link-data-lab" href="http://datalab.naver.com/keyword/realtimeList.naver?where=whale"></a>
+              </div>
+              <div class="rankup-container">
+          <div class="rankup-item">
+              <span class="rankup-rank no1"></span>
+              <a class="rankup-link" href="https://search.naver.com/search.naver?where=nexearch&amp;query=복면가왕 독수리건&amp;ie=utf8&amp;sm=whl_lve">
+              <div class="prevent-overflow" data-logging-type="NTP*l.kwrd1">복면가왕 독수리건</div>
+              </a>
+              <a class="rankup-link-datalab" href="http://datalab.naver.com/keyword/realtimeDetail.naver?datetime=2018-12-16T19:26:00+0900&amp;query=복면가왕 독수리건&amp;where=whale"></a>
+          </div>
+          <div class="rankup-item">
+              <span class="rankup-rank no2"></span>
+              <a class="rankup-link" href="https://search.naver.com/search.naver?where=nexearch&amp;query=이순재&amp;ie=utf8&amp;sm=whl_lve">
+              <div class="prevent-overflow" data-logging-type="NTP*l.kwrd2">이순재</div>
+              </a>
+              <a class="rankup-link-datalab" href="http://datalab.naver.com/keyword/realtimeDetail.naver?datetime=2018-12-16T19:26:00+0900&amp;query=이순재&amp;where=whale"></a>
+          </div>
+          <div class="rankup-item">
+              <span class="rankup-rank no3"></span>
+              <a class="rankup-link" href="https://search.naver.com/search.naver?where=nexearch&amp;query=이현&amp;ie=utf8&amp;sm=whl_lve">
+              <div class="prevent-overflow" data-logging-type="NTP*l.kwrd3">이현</div>
+              </a>
+              <a class="rankup-link-datalab" href="http://datalab.naver.com/keyword/realtimeDetail.naver?datetime=2018-12-16T19:26:00+0900&amp;query=이현&amp;where=whale"></a>
+          </div>
+          <div class="rankup-item">
+              <span class="rankup-rank no4"></span>
+              <a class="rankup-link" href="https://search.naver.com/search.naver?where=nexearch&amp;query=로운&amp;ie=utf8&amp;sm=whl_lve">
+              <div class="prevent-overflow" data-logging-type="NTP*l.kwrd4">로운</div>
+              </a>
+              <a class="rankup-link-datalab" href="http://datalab.naver.com/keyword/realtimeDetail.naver?datetime=2018-12-16T19:26:00+0900&amp;query=로운&amp;where=whale"></a>
+          </div>
+          <div class="rankup-item">
+              <span class="rankup-rank no5"></span>
+              <a class="rankup-link" href="https://search.naver.com/search.naver?where=nexearch&amp;query=안다은&amp;ie=utf8&amp;sm=whl_lve">
+              <div class="prevent-overflow" data-logging-type="NTP*l.kwrd5">안다은</div>
+              </a>
+              <a class="rankup-link-datalab" href="http://datalab.naver.com/keyword/realtimeDetail.naver?datetime=2018-12-16T19:26:00+0900&amp;query=안다은&amp;where=whale"></a>
+          </div>
+          <div class="rankup-item">
+              <span class="rankup-rank no6"></span>
+              <a class="rankup-link" href="https://search.naver.com/search.naver?where=nexearch&amp;query=로또837회당첨번호&amp;ie=utf8&amp;sm=whl_lve">
+              <div class="prevent-overflow" data-logging-type="NTP*l.kwrd6">로또837회당첨번호</div>
+              </a>
+              <a class="rankup-link-datalab" href="http://datalab.naver.com/keyword/realtimeDetail.naver?datetime=2018-12-16T19:26:00+0900&amp;query=로또837회당첨번호&amp;where=whale"></a>
+          </div>
+          <div class="rankup-item">
+              <span class="rankup-rank no7"></span>
+              <a class="rankup-link" href="https://search.naver.com/search.naver?where=nexearch&amp;query=독수리건&amp;ie=utf8&amp;sm=whl_lve">
+              <div class="prevent-overflow" data-logging-type="NTP*l.kwrd7">독수리건</div>
+              </a>
+              <a class="rankup-link-datalab" href="http://datalab.naver.com/keyword/realtimeDetail.naver?datetime=2018-12-16T19:26:00+0900&amp;query=독수리건&amp;where=whale"></a>
+          </div>
+          <div class="rankup-item">
+              <span class="rankup-rank no8"></span>
+              <a class="rankup-link" href="https://search.naver.com/search.naver?where=nexearch&amp;query=거미&amp;ie=utf8&amp;sm=whl_lve">
+              <div class="prevent-overflow" data-logging-type="NTP*l.kwrd8">거미</div>
+              </a>
+              <a class="rankup-link-datalab" href="http://datalab.naver.com/keyword/realtimeDetail.naver?datetime=2018-12-16T19:26:00+0900&amp;query=거미&amp;where=whale"></a>
+          </div>
+          <div class="rankup-item">
+              <span class="rankup-rank no9"></span>
+              <a class="rankup-link" href="https://search.naver.com/search.naver?where=nexearch&amp;query=차인표&amp;ie=utf8&amp;sm=whl_lve">
+              <div class="prevent-overflow" data-logging-type="NTP*l.kwrd9">차인표</div>
+              </a>
+              <a class="rankup-link-datalab" href="http://datalab.naver.com/keyword/realtimeDetail.naver?datetime=2018-12-16T19:26:00+0900&amp;query=차인표&amp;where=whale"></a>
+          </div>
+          <div class="rankup-item">
+              <span class="rankup-rank no10"></span>
+              <a class="rankup-link" href="https://search.naver.com/search.naver?where=nexearch&amp;query=김범수&amp;ie=utf8&amp;sm=whl_lve">
+              <div class="prevent-overflow" data-logging-type="NTP*l.kwrd10">김범수</div>
+              </a>
+              <a class="rankup-link-datalab" href="http://datalab.naver.com/keyword/realtimeDetail.naver?datetime=2018-12-16T19:26:00+0900&amp;query=김범수&amp;where=whale"></a>
+          </div>
+          <div class="rankup-item">
+              <span class="rankup-rank no11"></span>
+              <a class="rankup-link" href="https://search.naver.com/search.naver?where=nexearch&amp;query=설현&amp;ie=utf8&amp;sm=whl_lve">
+              <div class="prevent-overflow" data-logging-type="NTP*l.kwrd11">설현</div>
+              </a>
+              <a class="rankup-link-datalab" href="http://datalab.naver.com/keyword/realtimeDetail.naver?datetime=2018-12-16T19:26:00+0900&amp;query=설현&amp;where=whale"></a>
+          </div>
+          <div class="rankup-item">
+              <span class="rankup-rank no12"></span>
+              <a class="rankup-link" href="https://search.naver.com/search.naver?where=nexearch&amp;query=이서진&amp;ie=utf8&amp;sm=whl_lve">
+              <div class="prevent-overflow" data-logging-type="NTP*l.kwrd12">이서진</div>
+              </a>
+              <a class="rankup-link-datalab" href="http://datalab.naver.com/keyword/realtimeDetail.naver?datetime=2018-12-16T19:26:00+0900&amp;query=이서진&amp;where=whale"></a>
+          </div>
+          <div class="rankup-item">
+              <span class="rankup-rank no13"></span>
+              <a class="rankup-link" href="https://search.naver.com/search.naver?where=nexearch&amp;query=디에이드&amp;ie=utf8&amp;sm=whl_lve">
+              <div class="prevent-overflow" data-logging-type="NTP*l.kwrd13">디에이드</div>
+              </a>
+              <a class="rankup-link-datalab" href="http://datalab.naver.com/keyword/realtimeDetail.naver?datetime=2018-12-16T19:26:00+0900&amp;query=디에이드&amp;where=whale"></a>
+          </div>
+          <div class="rankup-item">
+              <span class="rankup-rank no14"></span>
+              <a class="rankup-link" href="https://search.naver.com/search.naver?where=nexearch&amp;query=집사부일체&amp;ie=utf8&amp;sm=whl_lve">
+              <div class="prevent-overflow" data-logging-type="NTP*l.kwrd14">집사부일체</div>
+              </a>
+              <a class="rankup-link-datalab" href="http://datalab.naver.com/keyword/realtimeDetail.naver?datetime=2018-12-16T19:26:00+0900&amp;query=집사부일체&amp;where=whale"></a>
+          </div>
+          <div class="rankup-item">
+              <span class="rankup-rank no15"></span>
+              <a class="rankup-link" href="https://search.naver.com/search.naver?where=nexearch&amp;query=열린음악회&amp;ie=utf8&amp;sm=whl_lve">
+              <div class="prevent-overflow" data-logging-type="NTP*l.kwrd15">열린음악회</div>
+              </a>
+              <a class="rankup-link-datalab" href="http://datalab.naver.com/keyword/realtimeDetail.naver?datetime=2018-12-16T19:26:00+0900&amp;query=열린음악회&amp;where=whale"></a>
+          </div>
+          <div class="rankup-item">
+              <span class="rankup-rank no16"></span>
+              <a class="rankup-link" href="https://search.naver.com/search.naver?where=nexearch&amp;query=박정현&amp;ie=utf8&amp;sm=whl_lve">
+              <div class="prevent-overflow" data-logging-type="NTP*l.kwrd16">박정현</div>
+              </a>
+              <a class="rankup-link-datalab" href="http://datalab.naver.com/keyword/realtimeDetail.naver?datetime=2018-12-16T19:26:00+0900&amp;query=박정현&amp;where=whale"></a>
+          </div>
+          <div class="rankup-item">
+              <span class="rankup-rank no17"></span>
+              <a class="rankup-link" href="https://search.naver.com/search.naver?where=nexearch&amp;query=어쿠스틱콜라보&amp;ie=utf8&amp;sm=whl_lve">
+              <div class="prevent-overflow" data-logging-type="NTP*l.kwrd17">어쿠스틱콜라보</div>
+              </a>
+              <a class="rankup-link-datalab" href="http://datalab.naver.com/keyword/realtimeDetail.naver?datetime=2018-12-16T19:26:00+0900&amp;query=어쿠스틱콜라보&amp;where=whale"></a>
+          </div>
+          <div class="rankup-item">
+              <span class="rankup-rank no18"></span>
+              <a class="rankup-link" href="https://search.naver.com/search.naver?where=nexearch&amp;query=주말 사용 설명서&amp;ie=utf8&amp;sm=whl_lve">
+              <div class="prevent-overflow" data-logging-type="NTP*l.kwrd18">주말 사용 설명서</div>
+              </a>
+              <a class="rankup-link-datalab" href="http://datalab.naver.com/keyword/realtimeDetail.naver?datetime=2018-12-16T19:26:00+0900&amp;query=주말 사용 설명서&amp;where=whale"></a>
+          </div>
+          <div class="rankup-item">
+              <span class="rankup-rank no19"></span>
+              <a class="rankup-link" href="https://search.naver.com/search.naver?where=nexearch&amp;query=편백구들장&amp;ie=utf8&amp;sm=whl_lve">
+              <div class="prevent-overflow" data-logging-type="NTP*l.kwrd19">편백구들장</div>
+              </a>
+              <a class="rankup-link-datalab" href="http://datalab.naver.com/keyword/realtimeDetail.naver?datetime=2018-12-16T19:26:00+0900&amp;query=편백구들장&amp;where=whale"></a>
+          </div>
+          <div class="rankup-item">
+              <span class="rankup-rank no20"></span>
+              <a class="rankup-link" href="https://search.naver.com/search.naver?where=nexearch&amp;query=노가리&amp;ie=utf8&amp;sm=whl_lve">
+              <div class="prevent-overflow" data-logging-type="NTP*l.kwrd20">노가리</div>
+              </a>
+              <a class="rankup-link-datalab" href="http://datalab.naver.com/keyword/realtimeDetail.naver?datetime=2018-12-16T19:26:00+0900&amp;query=노가리&amp;where=whale"></a>
+          </div></div>
+              <div class="flicking-indicator">
+                  <span class="page-index" data-index="0">
+                      <span class="icon-dot"></span>
+                  </span>
+                  <span class="page-index" data-index="1">
+                      <span class="icon-dot"></span>
+                  </span>
+              </div>
+              <div class="rankup-footer">
+                  <div class="desc-has-defect">
+                      일시적 오류로 최신 정보를 제공할 수 없습니다.
+                  </div>
+                  <div class="rankup-time">2018.12.16 (일) 19:26:00 PM 기준</div>
+              </div>
+          </div>
+      </div></ntp-rankup></div>
+    </div>
+  </div>
+  
+  <a id="bg-desc" class="col" data-logging-type="NTP.imgurl" rel="noopener" href="https://unsplash.com/photos/3rWiYstiJRM">
+    <img class="image">
+    <span class="text">
+      <span class="author">Whaleteam</span>
+      <span class="title">Photo by Charlie Hang</span>
+    </span>
+  </a>
+  
+  <div id="modal-container" class="overlay"></div>
+  
+  <div id="alert-overlay" class="alert-overlay centered-content">
+    <div id="alert-container" class="alert-warning modal-content centered-content"></div>
+  </div>
+   
+  </body><lightning></lightning></html>
